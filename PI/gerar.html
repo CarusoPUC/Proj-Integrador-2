@@ -1,0 +1,69 @@
+<html>
+<head>
+
+	<title> Geração </title>
+	<meta charset="UTF-9"/>
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<link rel="icon" type="image/png" href="1.PNG">
+	<script>
+	function closeIFrame() {
+	document.getElementById("frame").remove();
+	}
+	const btn = document.getElementById('btn');
+
+	btn.addEventListener('click', () => {
+    btn.style.display = 'none';});
+  
+var password=document.getElementById("password");
+
+ function genPassword() {
+    var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var passwordLength = 12;
+    var password = "";
+ for (var i = 0; i <= passwordLength; i++) {
+   var randomNumber = Math.floor(Math.random() * chars.length);
+   password += chars.substring(randomNumber, randomNumber +1);
+  }
+        document.getElementById("password").value = password;
+ }
+
+function copyPassword() {
+  var copyText = document.getElementById("password");
+  copyText.select();
+  document.execCommand("copy");  
+}
+	</script>
+	</head>
+	<body>
+	
+	
+	  <nav id="menu">
+			<ul>
+		    <li> <a href="gerar.html"><i class="material-icons left" id="ger">send</i>Geração</a></li>
+			<li> <a href=""><i class="material-icons left" id="rec">loop</i>Recarga</a></li>
+			<li> <a href=""><i class="material-icons left" id="uti">vpn_key</i>Utilização</a></li>
+			<li><a href=""><i class="material-icons left" id="rel">attachment</i>Relatório</a></li>
+			</ul>
+	  </nav>
+	  
+	    <iframe id="frame" name="iframeprincipal" frameborder="" width="100%" height="100%" src="aviso.html"></iframe>
+		
+		<h2>Código do bilhete</h2>
+		<div class="inpot"><input type="text" name="" placeholder="Create password" id="password" readonly>		</div>
+		<table>
+		<div class="inpota">
+		<th><div id="button" class="btn1"onclick="genPassword()">Generate</div></th>
+		<th><a  id="button" class="btn2" onclick="copyPassword()">Copy</a></th>
+		</table></div>
+
+		
+		<input id="btn" class="question" name="Close" type="button" value="Concordo" onClick="closeIFrame();style.display = 'none'";" tabindex="10"/> 
+			  
+	    
+		
+		
+  <div class="footer"><hr color="#000000">Desenvolvido por João Augusto e VASCO DA GAMAAA - todos os direitos reservados</div>
+</body>
+</html>
